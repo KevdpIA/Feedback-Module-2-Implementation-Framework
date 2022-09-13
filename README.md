@@ -1,9 +1,9 @@
 - Kevin Joan Delgado Pérez A01706328
-- 26/08/22
-
-In this repository i will public the second activity from module of Machine Learning, this activity consist in implement a method of ML with any framework.
+- 12/09/22
 
 Implementation of a Machine Learning technique with any framework, this is a part from an activity with feedback.
+
+In this repository i will public the second activity from module of Machine Learning, this activity consist in implement a method of ML with any framework.
 
 The study case consists in the management of the same dataset of the previous activity, that is the information of the demand of bikes in Seoul, South Korea. 
 
