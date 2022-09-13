@@ -9,11 +9,11 @@ The study case consists in the management of the same dataset of the previous ac
 
 The Variables used in this activity are:
 
- *  Dependent variable.
+*  Dependent variable.
  
    - Rented Bike count : Count of bikes rented at each hour
   
- *  Independent variables.
+*  Independent variables.
  
    - Hour : Hour of he day
    - Temperature : Temperature in Celsius
