@@ -1,5 +1,5 @@
-- Kevin Joan Delgado Pérez A01706328
-- 12/09/22
+# Kevin Joan Delgado Pérez A01706328
+# 12/09/22
 
 Implementation of a Machine Learning technique with any framework, this is a part from an activity with feedback.
 
