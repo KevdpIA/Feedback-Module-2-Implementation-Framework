@@ -20,8 +20,8 @@ The Variables used in this activity are:
   - Windspeed : m/s
   - Season : season of the year (this categoric variable will be converted in dummie variables: Spring, Summer, Autumn and Winter)
 
-In this code, are an implementation of a Neural Network with Tensorflow, ths NN is trained with the 75% of information of the dataframe and validated with predicting the rest of the information. 
+In this code, there is an implementation of a Neural Network with Tensorflow, the NN is trained with the 75% of information of the dataframe and validated with predicting the rest of the information. 
 
 The objetive from use this method with the dataset of rented bikes in Seoul is learn the process of the Machine Learning to predict values with the learning from a NN.
 
-Finally, the print shows the performance of the model with the errors acumulated from the trained data and the validation data.
+Finally, the print shows the performance of the model with the compare the errors acumulated from the trained data and the validation data.
