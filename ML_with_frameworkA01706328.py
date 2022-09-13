@@ -8,11 +8,9 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-
 import tensorflow as tf
-
 from tensorflow import keras
-from tensorflow.keras import layers
+from keras import layers
 
 
 
@@ -44,6 +42,8 @@ def normalize(x):                                         # normalizacion para o
   return (x - tr_stats['mean']) / tr_stats['std']         # formula de normalizacion
 normed_tr = normalize(tr_df)
 normed_test = normalize(test_df)                          # normalizar datos de entrenamiento y prueba
+print(normed_tr.head(15))
+
 
 model = keras.Sequential([                                # diseno completo de la red neuronal y configuraciones
   layers.Dense(64, activation='relu', input_shape=[len(tr_df.keys())]),
@@ -53,19 +53,19 @@ model = keras.Sequential([                                # diseno completo de l
   layers.Dense(1)
 ])
 
-optimizer = tf.keras.optimizers.Adam(learning_rate=0.03)  # optimizador de parametros para la red
+
 
 model.compile(loss='mse',                                 # comparador de errores para el modelo
-              optimizer=optimizer,
+              optimizer=tf.keras.optimizers.Adam(learning_rate=0.03),  # optimizador de parametros para la red
               metrics=['mae', 'mse'])
 
 model.summary()                         # detalles del modelo
 
-EPOCHS = 100                            # numero de epocas
+epochs = 300                            # numero de epocas
 
 history = model.fit(                    # iniciar proceso de entrenamiento
   normed_tr, tr_labels,
-  epochs=EPOCHS, validation_split = 0.25, verbose=1,
+  epochs=epochs, validation_split = 0.25, verbose=0,
                     )
 
 
@@ -73,7 +73,7 @@ hist = pd.DataFrame(history.history)    # abstraer datos de entrenamiento
 hist['epoch'] = history.epoch           # obtener el historial segun las epocas
 print(hist.tail(10))                    # imprimir informacion de las ultimas 10 epocas
 
-plt.figure, axis = plt.subplots(2)      # generar dos graficas
+Figure, axis = plt.subplots(2)      # generar dos graficas
 
 axis[0].set_title('Mean Abs Error ( Rented Bikes Count )')        # grafica del MAE
 axis[0].plot(hist['epoch'], hist['mae'], label='Train Error')     # linea de los errores de entrenamiento
@@ -93,5 +93,24 @@ for ax in axis.flat:
 
 for ax in axis.flat:                                
   ax.label_outer()                                  # solo generar los labels en los lados exteriores
+
+test_predictions = model.predict(normed_test).flatten() # generar predicciones con el set de datos de prueba
+
+plt.figure()
+plt.title('Testing data to predict') 
+plt.scatter(test_labels, test_predictions)          # grafica de dispersion para visualizar predicciones
+plt.xlabel('True Values')
+plt.ylabel('Predictions')
+plt.xlim([-100,plt.xlim()[1]])
+plt.ylim([-100,plt.ylim()[1]])
+line = plt.plot([-10000, 10000], [-10000, 10000])
+
+plt.figure()
+plt.title('Error Distribution')                     # grafica de histograma para visualizar los errores segun el valor de prediccion
+error = test_predictions - test_labels              # obtener error entre la prediccion y el valor real
+plt.hist(error, bins = 25)
+plt.xlabel("Prediction Error")
+line2 = plt.ylabel("Count of Bikes Rented")
+
 
 plt.show()
