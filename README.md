@@ -11,14 +11,14 @@ The Variables used in this activity are:
 
  *  Dependent variable.
  
-  - Rented Bike count : Count of bikes rented at each hour
+   - Rented Bike count : Count of bikes rented at each hour
   
  *  Independent variables.
  
-  - Hour : Hour of he day
-  - Temperature : Temperature in Celsius
-  - Windspeed : m/s
-  - Season : season of the year (this categoric variable will be converted in dummie variables: Spring, Summer, Autumn and Winter)
+   - Hour : Hour of he day
+   - Temperature : Temperature in Celsius
+   - Windspeed : m/s
+   - Season : season of the year (this categoric variable will be converted in dummie variables: Spring, Summer, Autumn and Winter)
 
 In this code, there is an implementation of a Neural Network with Tensorflow, the NN is trained with the 75% of information of the dataframe and validated with predicting the rest of the information. 
 
