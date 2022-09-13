@@ -25,3 +25,6 @@ In this code, there is an implementation of a Neural Network with Tensorflow, th
 The objetive from use this method with the dataset of rented bikes in Seoul is learn the process of the Machine Learning to predict values with the learning from a NN.
 
 Finally, the print shows the performance of the model with the compare the errors acumulated from the trained data and the validation data.
+
+
+# NOTE: To run this codes, you need to install with pip TENSORFLOW, PANDAS, SEABORN AND MATPLOTLIB libraries.
