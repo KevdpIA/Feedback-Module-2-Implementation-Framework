@@ -27,4 +27,11 @@ The objetive from use this method with the dataset of rented bikes in Seoul is l
 Finally, the print shows the performance of the model with the compare the errors acumulated from the trained data and the validation data.
 
 
-# NOTE: To run this codes, you need to install with pip TENSORFLOW, PANDAS, SEABORN AND MATPLOTLIB libraries.
+# Notes:
+
+
+  ## If you want to run the code, install the dependencies with:
+  
+  
+     pip install -r requirements.txt
+
